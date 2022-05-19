@@ -1,0 +1,161 @@
+@import '_color';
+
+* {
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+    overscroll-behavior: none;
+
+    body {
+        display: grid;
+        // place-content: center;
+        justify-content: center;
+        padding-top: 50px;
+        margin: 0;
+        height: 100vh;
+        background: $body;
+        // background-image: url(img/background_layer_1.png);
+        // background-repeat: no-repeat;
+        // background-size: cover;
+
+        .canvasContainer {
+            display: inline-block;
+            position: relative;
+            height: 576px;
+
+
+            .interface {
+                position: relative;
+                top: -15;
+
+                .imageAndHealth {
+                    position: absolute;
+                    display: flex;
+                    width: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    padding: 0 20px;
+
+                    .imageContainer {
+                        width: 70px;
+                        height: 70px;
+                        background-size: cover;
+                        flex-shrink: 0;
+                        border: 4px solid white;
+                        margin-top: 32px;
+                    }
+
+                    #playerImage {
+                        background-image: url(img/samuraiMack/mack.png);
+                    }
+
+                    #enemyImage {
+                        background-image: url(img/kenji/kenji.png);
+                    }
+
+                    #playerHealthBarContainer {
+                        position: relative;
+                        width: 100%;
+                        display: flex;
+                        justify-content: flex-end;
+                        border-top: 4px solid $healthBorder;
+                        // border-left: 4px solid $healthBorder;
+                        border-bottom: 4px solid $healthBorder;
+
+                        .healthBar {
+                            background-color: $healthBar;
+                            height: 30px;
+                            width: 100%;
+                        }
+
+                        .health {
+                            position: absolute;
+                            background-color: $health;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            width: 100%;
+                        }
+                    }
+
+                    #enemyHealthBarContainer {
+                        position: relative;
+                        width: 100%;
+                        border-top: 4px solid $healthBorder;
+                        // border-right: 4px solid $healthBorder;
+                        border-bottom: 4px solid $healthBorder;
+
+                        .healthBar {
+                            background-color: $healthBar;
+                            height: 30px;
+                        }
+
+                        .health {
+                            position: absolute;
+                            background-color: $health;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
+                            left: 0;
+                        }
+                    }
+
+                    #timer {
+                        background-color: $timer;
+                        height: 50px;
+                        width: 100px;
+                        flex-shrink: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: $timerText;
+                        border: 4px solid $timerBorder;
+                        font-size: 20px;
+                    }
+
+                }
+
+                .nameContainer {
+                    height: 32px;
+                    width: 130px;
+                    position: absolute;
+                    background-color: black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    font-size: 12px;
+                    color: white;
+                }
+
+                #playerName {
+                    border-bottom: 4px solid white;
+                    border-right: 4px solid white;
+                    top: 70px;
+                    left: 90px
+                }
+
+                #enemyName {
+                    border-bottom: 4px solid white;
+                    border-left: 4px solid white;
+                    top: 70px;
+                    right: 90px
+                }
+            }
+
+        }
+
+        #displayText {
+            position: absolute;
+            font-size: 32px;
+            color: white;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: none;
+        }
+    }
+}
