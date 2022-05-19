@@ -1,1 +1,16 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=7880225&assignment_repo_type=AssignmentRepo)
+# The Sword Fighting Game
+Classic One keyboard only 2 player versus fighting game.  
+Designed with a 2D pixelated style.
+
+## Controls
+**Player 1**
+- Move Left = 'A'
+- Move Right = 'D'
+- Jump = 'W'
+- Attack = 'SPACEBAR'
+
+**Player 2**
+- Move Left = 'ArrowLeft'
+- Move Right = 'ArrowRight'
+- Jump = 'ArrowUp'
+- Attack = 'ArrowDown'
