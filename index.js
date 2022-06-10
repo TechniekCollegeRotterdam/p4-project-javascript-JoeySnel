@@ -1,3 +1,6 @@
+// in dit bestand zou ik zelf volgende keer meer comments schrijven zodat je weet wat je hebt gedaan zodra je het vergeten ben of iets in die richting :)
+// Voor de rest ziet alles er goed uit, alleen nog alle Console.Log's moet je even verwijderen want die zijn niet nodig meer! :) - Timon
+
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
@@ -168,7 +171,8 @@ const keys = {
 }
 
 decreaseTimer()
-
+//deze functie is op de oude manier geschreven
+//de nieuwe manier is const animate = function()
 function animate() {
     window.requestAnimationFrame(animate)
     c.fillStyle = 'black'
