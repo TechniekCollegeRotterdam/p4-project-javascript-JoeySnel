@@ -1,3 +1,6 @@
+// in dit bestand zou ik zelf volgende keer meer comments schrijven zodat je weet wat je hebt gedaan zodra je het vergeten ben of iets in die richting :)
+// Voor de rest ziet alles er goed uit!!! - Timon
+
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
