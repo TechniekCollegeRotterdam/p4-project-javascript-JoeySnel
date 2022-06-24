@@ -1,13 +1,19 @@
 const canvas = document.querySelector('canvas')
+
+// geef aan dat het een 2d game wordt
 const c = canvas.getContext('2d')
 
+// canvas een hoogte en breedte geven
 canvas.width = 1024
 canvas.height = 576
 
+//  canvas creëren
 c.fillRect(0, 0, canvas.width, canvas.height)
 
+// kracht van zwaartekracht
 const gravity = 0.7
 
+// achtergrond
 const background = new Sprite({
     position: {
         x: 0,
@@ -16,6 +22,7 @@ const background = new Sprite({
     imageSrc: './img/background.png'
 })
 
+// achtergrond prop met animatie
 const shop = new Sprite({
     position: {
         x: 630,
@@ -26,20 +33,24 @@ const shop = new Sprite({
     framesMax: 6
 })
 
-// player 1
+// player 1's waardes
 const player = new Fighter({
+    // spawn positie
     position: {
         x: 112,
         y: 230
     },
+    // eerste bewegingssnelheid 
     velocity: {
         x: 0,
         y: 0
     },
+    // zorg ervoor dat de speler de juiste kant op kijkt
     offset: {
         x: 0,
         y: 0
     },
+    // idle sprite wanneer player spawnt
     imageSrc: './img/samuraiMack/Idle.png',
     scale: 2.5,
     framesMax: 8,
@@ -47,6 +58,7 @@ const player = new Fighter({
         x: 215,
         y: 155
     },
+    // Alle sprites
     sprites: {
         idle: {
             imageSrc: './img/samuraiMack/Idle.png',
@@ -77,6 +89,7 @@ const player = new Fighter({
             framesMax: 6
         }
     },
+    // hit box
     attackBox: {
         offset: {
             x: 50,
@@ -85,6 +98,7 @@ const player = new Fighter({
         width: 207,
         height: 50
     },
+    // aanvalschade
     attackDamage: 10
 })
 
@@ -150,8 +164,6 @@ const enemy = new Fighter({
     attackDamage: 5
 })
 
-console.log(player)
-
 const keys = {
     a: {
         pressed: false
@@ -167,8 +179,10 @@ const keys = {
     }
 }
 
+// start timer functie
 decreaseTimer()
 
+// animatie functie
 function animate() {
     window.requestAnimationFrame(animate)
     c.fillStyle = 'black'
@@ -271,8 +285,10 @@ function animate() {
     }
 }
 
+// start animate functie
 animate()
 
+// record keydown input player 1
 window.addEventListener('keydown', (event) => {
     if (!gameOver) {
         switch (event.key) {
@@ -294,6 +310,7 @@ window.addEventListener('keydown', (event) => {
                 break
         }
     }
+    // record keydown input player 2
     if (!gameOver) {
         switch (event.key) {
             case 'ArrowRight':
@@ -315,7 +332,7 @@ window.addEventListener('keydown', (event) => {
         }
     }
 })
-
+// record keyup input player 1
 window.addEventListener('keyup', (event) => {
     switch (event.key) {
         // player1
@@ -326,7 +343,7 @@ window.addEventListener('keyup', (event) => {
             keys.a.pressed = false
             break
 
-            // enemy
+            // record keyup input player 2
         case 'ArrowRight':
             keys.ArrowRight.pressed = false
             break
@@ -338,6 +355,7 @@ window.addEventListener('keyup', (event) => {
 
 let keyDown = false
 
+// toestemming krijgen voor het spelen van audio door gebruik van een keydown eventlistener
 addEventListener('keydown', () => {
     if (!keyDown) {
         audio.map.play()
@@ -345,4 +363,3 @@ addEventListener('keydown', () => {
         keyDown = true
     }
 })
-

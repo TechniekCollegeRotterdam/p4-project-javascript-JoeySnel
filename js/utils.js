@@ -1,3 +1,4 @@
+// record hit box collision met enemy
 function rectangularCollision({
     rectangle1,
     rectangle2
@@ -12,6 +13,7 @@ function rectangularCollision({
 
 let gameOver = false
 
+// bepaalt of spel moet beeindigen
 function determineWinner({
     player,
     enemy,
@@ -29,6 +31,7 @@ function determineWinner({
     }
 }
 
+// start tijd van game timer
 let timer = 121
 let timerId
 

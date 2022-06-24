@@ -1,3 +1,4 @@
+// alle audios met eigenschappen in een variabel
 const audio = {
     map: new Howl({
         src: 'audio/Mandala Dreams - Paths of a Samurai - trimmed.mp3',
