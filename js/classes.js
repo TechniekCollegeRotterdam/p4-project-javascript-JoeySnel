@@ -1,3 +1,4 @@
+// sprite constructor
 class Sprite {
     constructor({
         position,
@@ -22,6 +23,7 @@ class Sprite {
         this.offset = offset
     }
 
+    // draw functie tekent als het ware voor elke instance de juiste image op de juiste plek en met de juiste hoogte en breedte
     draw() {
         c.drawImage(
             this.image,
@@ -36,6 +38,7 @@ class Sprite {
         )
     }
 
+    // amimateframes functie zorgt ervoor dat de variabelen die de sprite frames bijhouden goed verlopen
     animateFrames() {
         this.framesElapsed++
 
@@ -48,12 +51,14 @@ class Sprite {
         }
     }
 
+    // update functie roept steeds te de functie draw en animateframes wanneer hijzelf opgeroepen wordt
     update() {
         this.draw()
         this.animateFrames()
     }
 }
 
+// child class van de sprite class
 class Fighter extends Sprite {
     constructor({
         position,
@@ -121,14 +126,6 @@ class Fighter extends Sprite {
         this.attackBox.position.x = this.position.x + this.attackBox.offset.x
         this.attackBox.position.y = this.position.y + this.attackBox.offset.y
 
-        // draw the attack box
-        // c.fillRect(
-        //     this.attackBox.position.x,
-        //     this.attackBox.position.y,
-        //     this.attackBox.width,
-        //     this.attackBox.height
-        // )
-
         this.position.x += this.velocity.x
         this.position.y += this.velocity.y
 
@@ -177,6 +174,7 @@ class Fighter extends Sprite {
         )
             return
 
+        // switch fighter sprite 
         switch (sprite) {
             case 'idle':
                 if (this.image !== this.sprites.idle.image) {
